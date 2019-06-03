@@ -1,0 +1,530 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"logs\":\"true\",\"metrics\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"cert-generator\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:38:56Z",
+                "labels": {
+                    "logs": "true",
+                    "metrics": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "cert-generator",
+                "resourceVersion": "1943",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/cert-generator",
+                "uid": "4f189c0f-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"logs\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"event-controller\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"emptyDir\",\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:38:56Z",
+                "labels": {
+                    "logs": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "event-controller",
+                "resourceVersion": "1951",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/event-controller",
+                "uid": "4f2928d1-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "emptyDir",
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"logs\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"fluent-bit\"},\"spec\":{\"allowedHostPaths\":[{\"pathPrefix\":\"/var/log\",\"readOnly\":false},{\"pathPrefix\":\"/var/lib/docker/containers\",\"readOnly\":true},{\"pathPrefix\":\"/var/vcap/store\",\"readOnly\":true},{\"pathPrefix\":\"/var/vcap/data\",\"readOnly\":true}],\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"RunAsAny\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"hostPath\",\"configMap\",\"emptyDir\",\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:38:56Z",
+                "labels": {
+                    "logs": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "fluent-bit",
+                "resourceVersion": "1955",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/fluent-bit",
+                "uid": "4f2df251-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "allowedHostPaths": [
+                    {
+                        "pathPrefix": "/var/log"
+                    },
+                    {
+                        "pathPrefix": "/var/lib/docker/containers",
+                        "readOnly": true
+                    },
+                    {
+                        "pathPrefix": "/var/vcap/store",
+                        "readOnly": true
+                    },
+                    {
+                        "pathPrefix": "/var/vcap/data",
+                        "readOnly": true
+                    }
+                ],
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "RunAsAny"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "hostPath",
+                    "configMap",
+                    "emptyDir",
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "apparmor.security.beta.kubernetes.io/allowedProfileNames": "runtime/default",
+                    "apparmor.security.beta.kubernetes.io/defaultProfileName": "runtime/default",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{\"apparmor.security.beta.kubernetes.io/allowedProfileNames\":\"runtime/default\",\"apparmor.security.beta.kubernetes.io/defaultProfileName\":\"runtime/default\",\"seccomp.security.alpha.kubernetes.io/allowedProfileNames\":\"docker/default\",\"seccomp.security.alpha.kubernetes.io/defaultProfileName\":\"docker/default\"},\"name\":\"kube-system-psp\"},\"spec\":{\"allowPrivilegeEscalation\":false,\"allowedCapabilities\":[\"*\"],\"fsGroup\":{\"rule\":\"RunAsAny\"},\"hostIPC\":true,\"hostNetwork\":true,\"hostPID\":true,\"hostPorts\":[{\"max\":65535,\"min\":0}],\"privileged\":false,\"runAsUser\":{\"rule\":\"RunAsAny\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"configMap\",\"emptyDir\",\"projected\",\"secret\",\"downwardAPI\"]}}\n",
+                    "seccomp.security.alpha.kubernetes.io/allowedProfileNames": "docker/default",
+                    "seccomp.security.alpha.kubernetes.io/defaultProfileName": "docker/default"
+                },
+                "creationTimestamp": "2019-05-21T17:19:53Z",
+                "name": "kube-system-psp",
+                "resourceVersion": "124",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/kube-system-psp",
+                "uid": "a5ef0a51-7bec-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": false,
+                "allowedCapabilities": [
+                    "*"
+                ],
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "hostIPC": true,
+                "hostNetwork": true,
+                "hostPID": true,
+                "hostPorts": [
+                    {
+                        "max": 65535,
+                        "min": 0
+                    }
+                ],
+                "runAsUser": {
+                    "rule": "RunAsAny"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "configMap",
+                    "emptyDir",
+                    "projected",
+                    "secret",
+                    "downwardAPI"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"metrics\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"metric-controller\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:38:59Z",
+                "labels": {
+                    "metrics": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "metric-controller",
+                "resourceVersion": "1961",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/metric-controller",
+                "uid": "50d2175a-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"observability-manager\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"RunAsAny\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"}}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:38:47Z",
+                "name": "observability-manager",
+                "resourceVersion": "1780",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/observability-manager",
+                "uid": "49dcc68c-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "RunAsAny"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                }
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "apparmor.security.beta.kubernetes.io/allowedProfileName": "*",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{\"apparmor.security.beta.kubernetes.io/allowedProfileName\":\"*\",\"seccomp.security.alpha.kubernetes.io/allowedProfileNames\":\"*\"},\"name\":\"pks-privileged\"},\"spec\":{\"allowPrivilegeEscalation\":true,\"allowedCapabilities\":[\"*\"],\"fsGroup\":{\"rule\":\"RunAsAny\"},\"hostIPC\":true,\"hostNetwork\":true,\"hostPID\":true,\"hostPorts\":[{\"max\":65535,\"min\":0}],\"privileged\":true,\"runAsUser\":{\"rule\":\"RunAsAny\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"awsElasticBlockStore\",\"azureDisk\",\"azureFile\",\"cephFS\",\"configMap\",\"csi\",\"downwardAPI\",\"emptyDir\",\"fc\",\"flexVolume\",\"flocker\",\"gcePersistentDisk\",\"glusterfs\",\"iscsi\",\"nfs\",\"persistentVolumeClaim\",\"projected\",\"portworxVolume\",\"quobyte\",\"rbd\",\"scaleIO\",\"secret\",\"storageos\",\"vsphereVolume\"]}}\n",
+                    "seccomp.security.alpha.kubernetes.io/allowedProfileNames": "*"
+                },
+                "creationTimestamp": "2019-05-21T17:19:53Z",
+                "name": "pks-privileged",
+                "resourceVersion": "133",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/pks-privileged",
+                "uid": "a60644aa-7bec-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "allowedCapabilities": [
+                    "*"
+                ],
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "hostIPC": true,
+                "hostNetwork": true,
+                "hostPID": true,
+                "hostPorts": [
+                    {
+                        "max": 65535,
+                        "min": 0
+                    }
+                ],
+                "privileged": true,
+                "runAsUser": {
+                    "rule": "RunAsAny"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "awsElasticBlockStore",
+                    "azureDisk",
+                    "azureFile",
+                    "cephFS",
+                    "configMap",
+                    "csi",
+                    "downwardAPI",
+                    "emptyDir",
+                    "fc",
+                    "flexVolume",
+                    "flocker",
+                    "gcePersistentDisk",
+                    "glusterfs",
+                    "iscsi",
+                    "nfs",
+                    "persistentVolumeClaim",
+                    "projected",
+                    "portworxVolume",
+                    "quobyte",
+                    "rbd",
+                    "scaleIO",
+                    "secret",
+                    "storageos",
+                    "vsphereVolume"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "apparmor.security.beta.kubernetes.io/allowedProfileNames": "runtime/default",
+                    "apparmor.security.beta.kubernetes.io/defaultProfileName": "runtime/default",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{\"apparmor.security.beta.kubernetes.io/allowedProfileNames\":\"runtime/default\",\"apparmor.security.beta.kubernetes.io/defaultProfileName\":\"runtime/default\",\"seccomp.security.alpha.kubernetes.io/allowedProfileNames\":\"docker/default\",\"seccomp.security.alpha.kubernetes.io/defaultProfileName\":\"docker/default\"},\"name\":\"pks-restricted\"},\"spec\":{\"allowPrivilegeEscalation\":false,\"fsGroup\":{\"ranges\":[{\"max\":65535,\"min\":1}],\"rule\":\"MustRunAs\"},\"hostIPC\":false,\"hostNetwork\":false,\"hostPID\":false,\"privileged\":false,\"readOnlyRootFilesystem\":false,\"requiredDropCapabilities\":[\"ALL\"],\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"ranges\":[{\"max\":65535,\"min\":1}],\"rule\":\"MustRunAs\"},\"volumes\":[\"configMap\",\"emptyDir\",\"projected\",\"secret\",\"downwardAPI\",\"persistentVolumeClaim\"]}}\n",
+                    "seccomp.security.alpha.kubernetes.io/allowedProfileNames": "docker/default",
+                    "seccomp.security.alpha.kubernetes.io/defaultProfileName": "docker/default"
+                },
+                "creationTimestamp": "2019-05-21T17:19:53Z",
+                "name": "pks-restricted",
+                "resourceVersion": "135",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/pks-restricted",
+                "uid": "a608b704-7bec-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": false,
+                "fsGroup": {
+                    "ranges": [
+                        {
+                            "max": 65535,
+                            "min": 1
+                        }
+                    ],
+                    "rule": "MustRunAs"
+                },
+                "requiredDropCapabilities": [
+                    "ALL"
+                ],
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "ranges": [
+                        {
+                            "max": 65535,
+                            "min": 1
+                        }
+                    ],
+                    "rule": "MustRunAs"
+                },
+                "volumes": [
+                    "configMap",
+                    "emptyDir",
+                    "projected",
+                    "secret",
+                    "downwardAPI",
+                    "persistentVolumeClaim"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"logs\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"sink-controller\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:39:02Z",
+                "labels": {
+                    "logs": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "sink-controller",
+                "resourceVersion": "1964",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/sink-controller",
+                "uid": "525452fa-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"metrics\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"telegraf\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"hostNetwork\":true,\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"configMap\",\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:39:02Z",
+                "labels": {
+                    "metrics": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "telegraf",
+                "resourceVersion": "1972",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/telegraf",
+                "uid": "529642fd-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "hostNetwork": true,
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "configMap",
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"telemetry-agent\"},\"spec\":{\"allowPrivilegeEscalation\":false,\"fsGroup\":{\"rule\":\"RunAsAny\"},\"hostIPC\":false,\"hostNetwork\":false,\"hostPID\":false,\"privileged\":false,\"readOnlyRootFilesystem\":false,\"requiredDropCapabilities\":[\"ALL\"],\"runAsUser\":{\"rule\":\"RunAsAny\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"configMap\",\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:42:02Z",
+                "name": "telemetry-agent",
+                "resourceVersion": "2388",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/telemetry-agent",
+                "uid": "be3159e0-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": false,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "requiredDropCapabilities": [
+                    "ALL"
+                ],
+                "runAsUser": {
+                    "rule": "RunAsAny"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "configMap",
+                    "secret"
+                ]
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "PodSecurityPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policy/v1beta1\",\"kind\":\"PodSecurityPolicy\",\"metadata\":{\"annotations\":{},\"labels\":{\"logs\":\"true\",\"metrics\":\"true\",\"safeToDelete\":\"true\"},\"name\":\"validator\"},\"spec\":{\"fsGroup\":{\"rule\":\"RunAsAny\"},\"runAsUser\":{\"rule\":\"MustRunAsNonRoot\"},\"seLinux\":{\"rule\":\"RunAsAny\"},\"supplementalGroups\":{\"rule\":\"RunAsAny\"},\"volumes\":[\"secret\"]}}\n"
+                },
+                "creationTimestamp": "2019-05-21T17:39:02Z",
+                "labels": {
+                    "logs": "true",
+                    "metrics": "true",
+                    "safeToDelete": "true"
+                },
+                "name": "validator",
+                "resourceVersion": "1977",
+                "selfLink": "/apis/extensions/v1beta1/podsecuritypolicies/validator",
+                "uid": "529de5b4-7bef-11e9-b586-005056a8a1e3"
+            },
+            "spec": {
+                "allowPrivilegeEscalation": true,
+                "fsGroup": {
+                    "rule": "RunAsAny"
+                },
+                "runAsUser": {
+                    "rule": "MustRunAsNonRoot"
+                },
+                "seLinux": {
+                    "rule": "RunAsAny"
+                },
+                "supplementalGroups": {
+                    "rule": "RunAsAny"
+                },
+                "volumes": [
+                    "secret"
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
