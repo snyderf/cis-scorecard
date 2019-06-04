@@ -6,7 +6,7 @@ spec:
   command:
   - sh
   - -c
-  - /kubelet_score.sh && sleep infinity
+  - /kubelet_score.sh && sleep 3600
   env:
   - name: NODE_NAME
     valueFrom:
