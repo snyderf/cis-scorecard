@@ -6,8 +6,6 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     && rm -rf /var/cache/apt/* \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /tmp/results
-
 COPY kubectl /usr/local/bin/
 COPY kubelet_score.sh /kubelet_score.sh
 
