@@ -5,7 +5,8 @@ sonobuoy-config:
 spec:
   command:
   - sh
-  - /kubelet_score.sh
+  - -c
+  - /kubelet_score.sh && sleep infinity
   env:
   - name: NODE_NAME
     valueFrom:
